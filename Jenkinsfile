@@ -20,5 +20,14 @@ pipeline {
             }
         }
 
+        stage ('Smoke Test') {
+
+            steps {
+                withMaven(maven : 'maven-352') {
+                    sh 'mvn  -Dtest={com.techprimers.testing.FizzBuzzTest.testFizz()}'
+                }
+            }
+        }
+
     }
 }
