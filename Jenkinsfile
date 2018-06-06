@@ -24,7 +24,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven-352') {
-                    sh 'mvn  -Dtest={com.techprimers.testing.FizzBuzzTest.testFizz()}'
+                    sh 'mvn  -Dtest={com.techprimers.testing.FizzBuzzTest.testFizz()} test'
                 }
             }
         }
